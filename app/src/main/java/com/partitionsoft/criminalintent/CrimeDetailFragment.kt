@@ -13,13 +13,13 @@ import java.util.*
 class CrimeDetailFragment : Fragment() {
 
     private var _binding: FragmentCrimeDetailBinding? = null
-    private val binding
+    val binding
         get() = checkNotNull(_binding) {
             "Cannot access binding because it is null. Is the view visible?"
         }
 
 
-    private lateinit var crime: Crime
+    lateinit var crime: Crime
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
