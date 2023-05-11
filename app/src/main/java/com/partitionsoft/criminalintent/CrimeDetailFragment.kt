@@ -32,10 +32,9 @@ class CrimeDetailFragment : Fragment() {
         crime = Crime(
             id = UUID.randomUUID(),
             title = "",
-            date = formattedDate,
+            date = Date(),
             isSolved = false, requiresPolicy = false
         )
-
     }
 
 
