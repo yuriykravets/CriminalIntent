@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import com.partitionsoft.criminalintent.databinding.FragmentCrimeDetailBinding
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -24,10 +25,14 @@ class CrimeDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val dateFormat = SimpleDateFormat("EEEE, MMM d, yyyy", Locale.getDefault())
+        val currentDate = Date()
+        val formattedDate = dateFormat.format(currentDate)
+
         crime = Crime(
             id = UUID.randomUUID(),
             title = "",
-            date = Date(),
+            date = formattedDate,
             isSolved = false, requiresPolicy = false
         )
 
